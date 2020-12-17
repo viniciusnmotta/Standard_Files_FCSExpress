@@ -1,5 +1,12 @@
+ui = fluidPage(
+  sidebarLayout(width=3,
+                actionButton("Start", "Save New Files")
+    )
+)
 
-FCSExpress_fcs_standard<-function(){
+server = function(input, output){
+
+  FCSExpress_fcs_standard<-function(){
   setwd(choose.dir(caption = "Choose the folder containing the files."))
   files = list.files(pattern = ".fcs$|.FCS$")
   fs<-read.flowSet(files)
@@ -18,5 +25,8 @@ FCSExpress_fcs_standard<-function(){
   write.flowSet(fs,outdir = "files_to_fcsExpress",filename = paste0("STD_",keyword(fs,"$FIL")))
   
 }
+  
+}
+
 
 #FCSExpress_fcs_standard()
