@@ -1,10 +1,3 @@
-ui = fluidPage(
-  sidebarLayout(width=3,
-                actionButton("Start", "Save New Files")
-    )
-)
-
-server = function(input, output){
 
   FCSExpress_fcs_standard<-function(){
   setwd(choose.dir(caption = "Choose the folder containing the files."))
@@ -26,7 +19,7 @@ server = function(input, output){
   
 }
   
-}
+
 
 
 #FCSExpress_fcs_standard()
